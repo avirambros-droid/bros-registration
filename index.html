@@ -86,7 +86,7 @@
   </form>
 </div>
 <script>
-const SCRIPT_URL = 'PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyrr2JhkBLb57AosTD2-dAcvoUx4yDAcak16SS0RG1IJWEmv-ZadxJl3lsF4-zGHTkf/exec';
 const form=document.getElementById('regForm'), statusEl=document.getElementById('status'), submitBtn=document.getElementById('submitBtn');
 const healthDetailsWrap=document.getElementById('healthDetailsWrap'), healthDetails=document.getElementById('healthDetails');
 document.querySelectorAll('input[name="healthIssue"]').forEach(r=>r.addEventListener('change',()=>{const yes=r.value==='כן'&&r.checked; if(yes){healthDetailsWrap.classList.remove('hidden');healthDetails.required=true}else if(r.checked){healthDetailsWrap.classList.add('hidden');healthDetails.required=false;healthDetails.value=''}}));
