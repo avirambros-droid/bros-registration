@@ -101,9 +101,50 @@ function end(){drawing=false}
 ['mousedown','touchstart'].forEach(ev=>canvas.addEventListener(ev,start,{passive:false}));['mousemove','touchmove'].forEach(ev=>canvas.addEventListener(ev,move,{passive:false}));['mouseup','mouseleave','touchend'].forEach(ev=>canvas.addEventListener(ev,end));
 document.getElementById('clearSig').addEventListener('click',()=>{ctx.clearRect(0,0,canvas.width,canvas.height);hasSig=false});
 
-form.addEventListener('submit',async e=>{e.preventDefault();statusEl.textContent=''; if(!hasSig){statusEl.textContent='יש לחתום לפני שליחת ההרשמה';statusEl.className='status error';return} if(SCRIPT_URL.includes('PASTE_YOUR')){statusEl.textContent='יש להגדיר קודם את כתובת Google Apps Script בקובץ index.html';statusEl.className='status error';return}
-  submitBtn.disabled=true;submitBtn.textContent='שולח...';
-  try{const fd=new FormData(form); const data=Object.fromEntries(fd.entries()); data.signature=canvas.toDataURL('image/png'); data.submittedAt=new Date().toISOString(); const res=await fetch(SCRIPT_URL,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(data)}); const out=await res.json(); if(!out.ok)throw new Error(out.error||'שגיאה בשליחה'); statusEl.textContent='ההרשמה התקבלה בהצלחה 🥋';statusEl.className='status success'; form.reset();ctx.clearRect(0,0,canvas.width,canvas.height);hasSig=false;healthDetailsWrap.classList.add('hidden'); window.scrollTo({top:0,behavior:'smooth'});}catch(err){statusEl.textContent='לא הצלחנו לשלוח את ההרשמה. נסו שוב או צרו קשר עם המועדון.';statusEl.className='status error';console.error(err)}finally{submitBtn.disabled=false;submitBtn.textContent='🥋 שליחת ההרשמה'}
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  statusEl.textContent = '';
+
+  if (!hasSig) {
+    statusEl.textContent = 'יש לחתום לפני שליחת ההרשמה';
+    statusEl.className = 'status error';
+    return;
+  }
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'שולח...';
+
+  try {
+    const fd = new FormData(form);
+    const data = Object.fromEntries(fd.entries());
+
+    data.signature = canvas.toDataURL('image/png');
+    data.submittedAt = new Date().toISOString();
+
+    await fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'text/plain;charset=utf-8'
+      },
+      body: JSON.stringify(data)
+    });
+
+    statusEl.textContent = '✅ ההרשמה נשלחה בהצלחה!';
+    statusEl.className = 'status success';
+
+    form.reset();
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    hasSig = false;
+
+  } catch (err) {
+    console.error(err);
+    statusEl.textContent = 'לא הצלחנו לשלוח את ההרשמה. נסו שוב או צרו קשר עם המועדון.';
+    statusEl.className = 'status error';
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = '🥋 שליחת ההרשמה';
+  }
 });
 </script>
 </body>
