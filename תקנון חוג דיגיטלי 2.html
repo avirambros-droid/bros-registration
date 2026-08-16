@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BROS אומנויות לחימה | הרשמה 2026–2027</title>
+<style>
+:root{--bg:#07111b;--card:#111a25;--text:#f7f7fb;--muted:#aeb8c5;--line:#334155;--accent:#07861d;--danger:#ff7070}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,#050a10,#0b1420);color:var(--text);font-family:Arial,"Heebo",sans-serif}
+.wrap{max-width:900px;margin:auto;padding:24px 16px 60px}
+.hero{text-align:center;padding:22px 8px 12px}
+.logo{width:84px;height:84px;border-radius:50%;border:2px solid var(--accent);display:grid;place-items:center;margin:auto;font-size:42px}
+h1{margin:14px 0 6px;font-size:30px}.sub{color:var(--muted);margin:0}
+.card{background:rgba(17,26,37,.97);border:1px solid var(--line);border-radius:18px;padding:22px;margin:16px 0}
+h2{font-size:20px;margin:0 0 18px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.full{grid-column:1/-1}
+label{display:block;font-weight:700;margin-bottom:7px}
+input,select,textarea{width:100%;padding:13px 14px;border-radius:12px;border:1px solid #3a4758;background:#0b131e;color:#fff;font-size:16px;outline:none}
+textarea{min-height:95px;resize:vertical}
+.radio,.check{display:flex;gap:14px;flex-wrap:wrap}.radio label,.check label{font-weight:400;display:flex;gap:8px;align-items:center;margin:0}
+.radio input,.check input{width:auto}
+.terms{max-height:430px;overflow:auto;background:#0b131e;border:1px solid var(--line);padding:18px;border-radius:14px;line-height:1.7}
+.terms h3{margin:18px 0 6px;font-size:17px}.terms p{margin:6px 0;color:#e8edf3}
+.hidden{display:none}
+.sig-wrap{border:1px dashed #64748b;border-radius:14px;background:#fff;padding:8px}.sig-wrap canvas{width:100%;height:180px;display:block;touch-action:none}
+.actions{display:flex;justify-content:flex-start;margin-top:8px}
+.btn-mini{border:0;border-radius:10px;padding:9px 13px;background:#374151;color:#fff;font-size:14px;cursor:pointer}
+.submit{width:100%;border:0;border-radius:14px;background:var(--accent);color:#fff;font-weight:800;padding:17px;font-size:20px;cursor:pointer}
+.submit:disabled{opacity:.55;cursor:not-allowed}.status{margin-top:12px;text-align:center;font-weight:700}.error{color:var(--danger)}.ok{color:#68e17d}
+@media(max-width:650px){.grid{grid-template-columns:1fr}.full{grid-column:auto}h1{font-size:25px}.card{padding:17px}.wrap{padding:14px 11px 40px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <div class="logo">🥋</div>
+    <h1>BROS אומנויות לחימה</h1>
+    <p class="sub">טופס הרשמה לשנת הפעילות 2026–2027<br>JUDO • MMA • JIU-JITSU</p>
+  </div>
+
+  <form id="regForm">
+    <section class="card">
+      <h2>👤 פרטי המתאמן/ת</h2>
+      <div class="grid">
+        <div><label>שם פרטי *</label><input name="firstName" required></div>
+        <div><label>שם משפחה *</label><input name="lastName" required></div>
+        <div><label>מספר תעודת זהות *</label><input name="studentId" inputmode="numeric" required></div>
+        <div><label>תאריך לידה *</label><input type="date" name="birthDate" required></div>
+        <div><label>מין *</label><select name="gender" required><option value="">בחירה</option><option>בן</option><option>בת</option></select></div>
+        <div><label>כיתה *</label><select name="grade" required><option value="">בחירה</option><option>גן</option><option>א׳</option><option>ב׳</option><option>ג׳</option><option>ד׳</option><option>ה׳</option><option>ו׳</option><option>ז׳</option><option>ח׳</option><option>ט׳</option><option>י׳</option><option>י״א</option><option>י״ב</option><option>בוגר/ת</option></select></div>
+        <div class="full"><label>יישוב *</label><input name="city" required></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>🥋 בחירת סניף</h2>
+      <div class="grid">
+        <div class="full">
+          <label>בחירת סניף / קבוצה *</label>
+          <select name="group" required>
+            <option value="">יש לבחור</option>
+            <option>אשכולות | יום רביעי | ילדי גן–כיתה ו׳ | 17:45</option>
+            <option>נגוהות | יום שלישי | ילדי גן–כיתה ו׳ | 18:00</option>
+            <option>שמעה | יום שני | ילדי גן–כיתה ו׳ | 17:45</option>
+            <option>סנסנה | יום רביעי | כיתות ג׳–ו׳ | 15:45</option>
+            <option>סנסנה | יום רביעי | ילדי גן–כיתה ב׳ | 16:30</option>
+          </select>
+        </div>
+      </div>
+      <p style="color:var(--muted);margin:16px 0 0">השיבוץ הסופי לקבוצה ייעשה בהתאם לגיל, לרמה ולשיקול דעת המאמן.</p>
+    </section>
+
+    <section class="card">
+      <h2>👨‍👩‍👧 פרטי הורה / איש קשר</h2>
+      <div class="grid">
+        <div><label>שם ההורה *</label><input name="parentName" required></div>
+        <div><label>טלפון *</label><input type="tel" name="phone" required></div>
+        <div><label>שם הורה נוסף</label><input name="parent2Name"></div>
+        <div><label>טלפון הורה נוסף</label><input type="tel" name="parent2Phone"></div>
+        <div class="full"><label>דוא״ל *</label><input type="email" name="email" required></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>🩺 הצהרת בריאות</h2>
+      <p>האם קיימת בעיה רפואית, מגבלה, רגישות, פציעה או מידע רפואי שהמאמן צריך לדעת עליו?</p>
+      <div class="radio">
+        <label><input type="radio" name="healthIssue" value="לא" required> לא</label>
+        <label><input type="radio" name="healthIssue" value="כן" required> כן</label>
+      </div>
+      <div id="healthDetailsWrap" class="hidden" style="margin-top:14px">
+        <label>נא לפרט *</label>
+        <textarea id="healthDetails" name="healthDetails"></textarea>
+      </div>
+      <p>אני מאשר/ת כי ככל הידוע לי, המתאמן/ת כשיר/ה להשתתף בפעילות גופנית ובאימוני אומנויות לחימה, ומתחייב/ת לעדכן על שינוי במצב הבריאותי.</p>
+      <div class="check"><label><input type="checkbox" name="healthApprove" required> אני מאשר/ת את הצהרת הבריאות *</label></div>
+    </section>
+
+    <section class="card">
+      <h2>📷 אישור צילום ופרסום</h2>
+      <p>במהלך אימונים, תחרויות ואירועים עשויים להתבצע צילומים לצורכי תיעוד ופרסום פעילות המועדון.</p>
+      <label>האם אתם מאשרים צילום ופרסום של המתאמן/ת? *</label>
+      <div class="radio">
+        <label><input type="radio" name="photoConsent" value="כן" required> כן, מאשר/ת</label>
+        <label><input type="radio" name="photoConsent" value="לא" required> לא מאשר/ת</label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>📋 תקנון החוג</h2>
+      <div class="terms">
+        <h3>ברוכים הבאים 🥋</h3>
+        <p>ברוכים הבאים ל־<b>ברוס אומנויות לחימה</b>. מטרת החוג היא להעניק למתאמנים מסגרת מקצועית, ערכית ומהנה, תוך דגש על התקדמות, משמעת, כבוד, ביטחון עצמי והתמדה.</p>
+
+        <h3>1. בטיחות ובריאות</h3>
+        <p>האימונים כוללים פעילות גופנית ומגע כחלק מלימודי אומנויות הלחימה. יש לעדכן את המאמן מראש על כל מגבלה רפואית, פציעה, רגישות או מצב שעשוי להשפיע על יכולת המתאמן להשתתף באימון. במקרה של כאב, פציעה או הרגשה לא טובה במהלך האימון, יש לעדכן את המאמן מיד.</p>
+
+        <h3>2. כללי התנהגות</h3>
+        <p>המתאמנים נדרשים לנהוג בכבוד כלפי המאמן, חברי הקבוצה והמתקן. אין להשתמש בטכניקות הנלמדות בחוג לצורך אלימות או פגיעה באחרים מחוץ למסגרת האימון. אלימות, קללות, הצקות או התנהגות המסכנת מתאמנים אחרים אינן מקובלות. במקרה של התנהגות שאינה מתאימה למסגרת, המאמן רשאי להפסיק את השתתפות המתאמן באימון. במקרים חריגים או חוזרים ניתן יהיה להפסיק את השתתפותו בחוג.</p>
+
+        <h3>3. הגעה לאימונים</h3>
+        <p>יש להגיע בזמן ובציוד המתאים לאימון. יש להגיע עם בקבוק מים אישי ולהקפיד על היגיינה אישית, ציפורניים קצרות וללא תכשיטים במהלך האימון.</p>
+
+        <h3>4. לבוש וציוד</h3>
+        <p><b>ג׳ודו / ג׳וג׳יטסו ברזילאי:</b> בהתאם לצורך תידרש חליפת אימון מתאימה. ניתן לרכוש דרך המועדון: חליפה לבנה – <b>250 ₪</b>, חליפה כחולה – <b>280 ₪</b>.</p>
+        <p><b>MMA:</b> בהתאם להנחיית המאמן יידרש ציוד מתאים הכולל מכנס MMA וחולצת Rash Guard, כפפות אגרוף, מגני שוק וכף רגל, מגן מפשעה ומגן שיניים. אין צורך לרכוש ציוד לפני קבלת הנחיה מהמאמן.</p>
+
+        <h3>5. תחרויות, מבחני חגורה ופעילויות מיוחדות</h3>
+        <p>במהלך השנה עשויים להתקיים תחרויות, מבחני חגורה, אימונים משותפים ואירועים מיוחדים. פעילויות מסוימות עשויות להיות כרוכות בהרשמה ובתשלום נוסף, ועל כך תימסר הודעה מראש. השתתפות בתחרויות ובמבחני חגורה תהיה בהתאם לרמת המתאמן ולהמלצת המאמן.</p>
+
+        <h3>6. תקופת הפעילות והרשמה</h3>
+        <p>החוג הינו <b>חוג שנתי</b>, וההרשמה היא לשנת הפעילות המלאה.</p>
+        <p>ניתן להודיע על הפסקת השתתפות בחוג <b>עד לתאריך 1.1.2027</b>.</p>
+        <p>הפסקת החוג תיכנס לתוקף <b>חודש ממועד מסירת הודעת הביטול</b>. עד למועד זה יחויב המשתתף בתשלום החוג כרגיל ויהיה רשאי להמשיך ולהשתתף באימונים.</p>
+        <p><b>לא ניתן לבצע ביטול רטרואקטיבי או לקבל זיכוי עבור תקופה שקדמה למסירת הודעת הביטול.</b></p>
+        <p>לאחר <b>1.1.2027</b> לא ניתן לבטל את ההרשמה, והחיוב יימשך עד לסיום שנת הפעילות.</p>
+
+        <h3>7. חופשות</h3>
+        <p>פעילות החוג מתקיימת בהתאם ללוח שנת הפעילות. ככלל, החוג אינו מתקיים במהלך <b>חופשות משרד החינוך ובחגים</b>. ימי חופשה אלה מהווים חלק מלוח הפעילות השנתי ואינם נחשבים לאימונים שבוטלו.</p>
+
+        <h3>8. ביטול אימונים והשלמות</h3>
+        <p>במהלך שנת הפעילות תיתכן אפשרות לביטול של <b>עד שני אימונים</b>, ללא חובת השלמה. ביטולים אלה עשויים להיות עקב השתתפות המאמן בתחרויות, קורסים והשתלמויות מקצועיות או בשל נסיבות אישיות. החל מ־<b>ביטול האימון השלישי באותה שנת פעילות</b>, המאמן מתחייב לקיים אימון השלמה במועד שייקבע ויימסר להורים.</p>
+
+        <h3>9. צילום ופרסום</h3>
+        <p>במהלך האימונים והאירועים עשויים להתבצע צילומים לצורכי תיעוד ופרסום פעילות המועדון. בטופס ההרשמה ניתנת להורה אפשרות נפרדת לאשר או לא לאשר צילום ופרסום.</p>
+
+        <h3>10. תקשורת ועדכונים</h3>
+        <p>הודעות ועדכונים בנוגע לאימונים, חופשות, שינויים, תחרויות ואירועים יישלחו באמצעי התקשורת של הקבוצה.</p>
+      </div>
+      <div class="check" style="margin-top:14px"><label><input type="checkbox" name="termsApprove" required> קראתי את תקנון החוג במלואו, הבנתי את תנאיו ואני מאשר/ת את ההרשמה בהתאם לתקנון *</label></div>
+    </section>
+
+    <section class="card">
+      <h2>✍️ חתימה</h2>
+      <div class="grid">
+        <div class="full"><label>שם ההורה / האפוטרופוס המאשר *</label><input name="signerName" required></div>
+        <div class="full">
+          <label>חתימה דיגיטלית *</label>
+          <div class="sig-wrap"><canvas id="sig"></canvas></div>
+          <div class="actions"><button type="button" id="clearSig" class="btn-mini">ניקוי חתימה</button></div>
+        </div>
+      </div>
+    </section>
+
+    <button class="submit" id="submitBtn" type="submit">🥋 שליחת ההרשמה</button>
+    <div id="status" class="status"></div>
+  </form>
+</div>
+
+<script>
+const SCRIPT_URL='https://script.google.com/macros/s/AKfycbyrr2JhkBLb57AosTD2-dAcvoUx4yDAcak16SS0RG1IJWEmv-ZadxJl3lsF4-zGHTkf/exec';
+const form=document.getElementById('regForm'),statusEl=document.getElementById('status'),submitBtn=document.getElementById('submitBtn');
+const healthDetailsWrap=document.getElementById('healthDetailsWrap'),healthDetails=document.getElementById('healthDetails');
+
+document.querySelectorAll('input[name="healthIssue"]').forEach(r=>r.addEventListener('change',()=>{
+  if(r.value==='כן'&&r.checked){
+    healthDetailsWrap.classList.remove('hidden');
+    healthDetails.required=true;
+  }else if(r.value==='לא'&&r.checked){
+    healthDetailsWrap.classList.add('hidden');
+    healthDetails.required=false;
+    healthDetails.value='';
+  }
+}));
+
+const canvas=document.getElementById('sig'),ctx=canvas.getContext('2d');
+let drawing=false,hasSig=false;
+
+function resizeCanvas(){
+  const rect=canvas.getBoundingClientRect();
+  const ratio=Math.max(window.devicePixelRatio||1,1);
+  const old=hasSig?canvas.toDataURL():null;
+  canvas.width=Math.max(1,Math.floor(rect.width*ratio));
+  canvas.height=Math.floor(180*ratio);
+  ctx.setTransform(ratio,0,0,ratio,0,0);
+  ctx.lineWidth=2;
+  ctx.lineCap='round';
+  ctx.strokeStyle='#111';
+  if(old){
+    const img=new Image();
+    img.onload=()=>ctx.drawImage(img,0,0,rect.width,180);
+    img.src=old;
+  }
+}
+window.addEventListener('resize',resizeCanvas);
+resizeCanvas();
+
+function pos(e){
+  const rect=canvas.getBoundingClientRect();
+  const p=e.touches?e.touches[0]:e;
+  return{x:p.clientX-rect.left,y:p.clientY-rect.top};
+}
+function start(e){drawing=true;hasSig=true;const p=pos(e);ctx.beginPath();ctx.moveTo(p.x,p.y);e.preventDefault();}
+function move(e){if(!drawing)return;const p=pos(e);ctx.lineTo(p.x,p.y);ctx.stroke();e.preventDefault();}
+function end(){drawing=false;}
+
+['mousedown','touchstart'].forEach(ev=>canvas.addEventListener(ev,start,{passive:false}));
+['mousemove','touchmove'].forEach(ev=>canvas.addEventListener(ev,move,{passive:false}));
+['mouseup','mouseleave','touchend'].forEach(ev=>canvas.addEventListener(ev,end));
+document.getElementById('clearSig').addEventListener('click',()=>{
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  hasSig=false;
+});
+
+form.addEventListener('submit',async e=>{
+  e.preventDefault();
+  statusEl.textContent='';
+  statusEl.className='status';
+
+  if(!hasSig){
+    statusEl.textContent='יש לחתום לפני שליחת ההרשמה';
+    statusEl.className='status error';
+    return;
+  }
+
+  submitBtn.disabled=true;
+  submitBtn.textContent='שולח...';
+
+  try{
+    const fd=new FormData(form);
+    const data=Object.fromEntries(fd.entries());
+    data.signature=canvas.toDataURL('image/png');
+    data.submittedAt=new Date().toISOString();
+
+    await fetch(SCRIPT_URL,{
+      method:'POST',
+      mode:'no-cors',
+      body:JSON.stringify(data)
+    });
+
+    statusEl.textContent='ההרשמה נשלחה בהצלחה ✓';
+    statusEl.className='status ok';
+    form.reset();
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    hasSig=false;
+    healthDetailsWrap.classList.add('hidden');
+
+  }catch(err){
+    console.error(err);
+    statusEl.textContent='לא הצלחנו לשלוח את ההרשמה. נסו שוב או צרו קשר עם המועדון.';
+    statusEl.className='status error';
+  }finally{
+    submitBtn.disabled=false;
+    submitBtn.textContent='🥋 שליחת ההרשמה';
+  }
+});
+</script>
+</body>
+</html>
